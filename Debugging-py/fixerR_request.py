@@ -1,4 +1,5 @@
 import requests
+import json
 
 
 def main():
@@ -6,9 +7,11 @@ def main():
     base = 'INR'
     symbol = 'GBP,JPY,EUR'
 
-    response = requests.get('http://data.fixer.io/api/latest?access_key={0}&base={1}&symbols={2}'
-                            .format(API_KEY, base, symbol))
-    print(response)
+    response = requests.get('http://127.0.0.1:8000/getSongs')
+    data = json.loads(response.content)
+    for d in data:
+        print(d["filename"])
+    print(response.content)
 
 
 main()

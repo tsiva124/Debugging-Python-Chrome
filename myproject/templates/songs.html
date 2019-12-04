@@ -1,0 +1,14 @@
+<table>
+    <th>
+        <td>filename</td>
+        <td>title</td>
+        <td>duration</td>
+    </th>
+    {% for o in data %}
+    <tr>
+        <td>{{o.filename}}</td>
+        <td>{{o.title}}</td>
+        <td>{{o.duration}}</td>
+    </tr>
+    {% endfor %}
+</table>
